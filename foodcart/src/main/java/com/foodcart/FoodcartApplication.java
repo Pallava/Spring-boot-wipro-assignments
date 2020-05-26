@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FoodcartApplication {
 
 	public static void main(String[] args) {
+		System.out.println("sd");
 		SpringApplication.run(FoodcartApplication.class, args);
 	}
 
