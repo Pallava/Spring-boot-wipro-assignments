@@ -11,15 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name="food_category")
-@Getter
-@Setter
-@ToString
 public class FoodType {
 	
 	@Id
@@ -32,4 +25,30 @@ public class FoodType {
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "foodType")
 	private List<FoodDetails> foodDetails;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getFoodCategory() {
+		return foodCategory;
+	}
+
+	public void setFoodCategory(String foodCategory) {
+		this.foodCategory = foodCategory;
+	}
+
+	public List<FoodDetails> getFoodDetails() {
+		return foodDetails;
+	}
+
+	public void setFoodDetails(List<FoodDetails> foodDetails) {
+		this.foodDetails = foodDetails;
+	}
+
+	
+	
 }
