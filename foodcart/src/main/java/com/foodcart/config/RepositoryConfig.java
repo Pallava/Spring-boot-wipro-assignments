@@ -26,7 +26,8 @@ public class RepositoryConfig implements RepositoryRestConfigurer{
 		//we can auto expose ids instead of doing it manualyy
 		//create entity manager ,get all entities and loop through all the entities
 		config.exposeIdsFor(entityManager.getMetamodel().getEntities().stream().map(Type::getJavaType).toArray(Class[]::new));
-				
+		//for cors mapping 
+		config.getCorsRegistry().addMapping("/**").allowedOrigins("*");
 				
 		
 	}

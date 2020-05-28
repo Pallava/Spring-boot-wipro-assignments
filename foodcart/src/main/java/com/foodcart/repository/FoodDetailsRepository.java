@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.foodcart.model.FoodDetails;
-@CrossOrigin(origins = "*")//any request coming from other sources u need to allow 
+//@CrossOrigin(origins = "*")//any request coming from other sources u need to allow 
 @RepositoryRestResource(collectionResourceRel = "foodDetailses" ,path="food-details") //overriding rest end points
 public interface FoodDetailsRepository extends JpaRepository<FoodDetails, Integer>{
 
