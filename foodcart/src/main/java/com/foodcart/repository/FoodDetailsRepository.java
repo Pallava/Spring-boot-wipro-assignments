@@ -15,4 +15,7 @@ public interface FoodDetailsRepository extends JpaRepository<FoodDetails, Intege
 
 	@RestResource(path = "foodCategoryId")
 	Page <FoodDetails> findByFoodTypeId(@Param("id") Integer categoryId,Pageable pageable);
+	
+	@RestResource(path = "searchByKeyword")
+	Page <FoodDetails> findByNameContaining(@Param("name") String keyword,Pageable pageable);
 }

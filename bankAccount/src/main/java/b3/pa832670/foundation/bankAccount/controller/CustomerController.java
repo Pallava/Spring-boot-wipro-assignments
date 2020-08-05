@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +20,11 @@ import b3.pa832670.foundation.bankAccount.pojo.FundTransfer;
 import b3.pa832670.foundation.bankAccount.service.BankCustomerService;
 
 @RestController
+@CrossOrigin(origins = "https://localhost:4200")
 public class CustomerController {
-
+  
+	
+	
 	@Autowired
 	private BankCustomerService bankCustomerService;
 
@@ -139,6 +143,7 @@ public class CustomerController {
 	 * 
 	 * @return
 	 */
+
 	@GetMapping("/customers/accounts") // good
 	public List<Customer> getAllCustomersWithAccount() {
 		return bankCustomerService.getAllCustomersWithAccount();

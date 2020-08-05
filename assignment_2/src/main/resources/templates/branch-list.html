@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Branches</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+    <div class="container my-2">
+    <div class="card">
+    <div class="card-body">
+    
+    	<h1 th:text=${bankName}></h1>
+        <div th:switch="${branches}" class="container my-5">
+           
+            <div class="col-md-10">
+                <h2 th:case="null">No record found !!</h2>
+                <div th:case="*">
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>Branches</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="branch : ${branches}">
+                                <td th:text="${branch.branchName}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
